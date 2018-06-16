@@ -15,5 +15,4 @@ public class CarRepositoryTest {
     @Test
     public void contextLoads() {
     }
-
-    }
+}

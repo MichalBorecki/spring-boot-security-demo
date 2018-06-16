@@ -1,4 +1,4 @@
-package pl.kabeonet.springbootsecuritydemo.Bean;
+package pl.kabeonet.springbootsecuritydemo.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
