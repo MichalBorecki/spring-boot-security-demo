@@ -30,10 +30,11 @@ public class CarController {
     }
 
     /*
-     Create car from form
+    Create car from form
      */
-    @PostMapping("/")
+    @PostMapping("")
     public String saveCar(@Valid Car car, BindingResult result){
+        System.out.println(car);
         if (result.hasErrors()) {
             return "car/carForm";
         }
@@ -42,39 +43,39 @@ public class CarController {
     }
 
     /*
-     Read car by id
+    Read car by id
      */
     @RequestMapping("/{id}")
     public String showCar(@PathVariable long id, Model model){
         model.addAttribute("car", carService.getCarById(id));
-        return "carShow";
+        return "car/carShow";
     }
 
     /*
-     Read all cars
+    Read all cars
      */
     @GetMapping("/cars")
     public String showCars(Model model){
         model.addAttribute("cars",carService.getAllCars());
-        return "cars";
+        return "car/cars";
     }
 
-    /**
-     Edit car
+    /*
+    Edit car
      */
-    @RequestMapping("car/edit/{id}")
+    @RequestMapping("/edit/{id}")
     public String edit(@PathVariable long id, Model model){
         model.addAttribute("car", carService.getCarById(id));
-        return "carForm";
+        return "car/carForm";
     }
 
-    /**
-     Delete car
+    /*
+    Delete car
      */
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable long id){
         carService.deleteCar(id);
-        return "redirect/car/cars";
+        return "redirect:/car/cars";
     }
 
 

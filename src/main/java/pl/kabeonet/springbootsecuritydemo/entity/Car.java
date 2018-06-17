@@ -1,6 +1,7 @@
 package pl.kabeonet.springbootsecuritydemo.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,9 +17,11 @@ public class Car {
     private String model;
 
     @NotNull
+    @Min(1)
     private int carNumber;
 
     @NotNull
+    @Min(0)
     private double mileage;
 
     @NotNull
@@ -26,6 +29,11 @@ public class Car {
     @Size(min = 1, max = 300)
     @Column(columnDefinition = "TEXT")
     private String description;
+
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getId() {
         return id;
@@ -63,6 +71,15 @@ public class Car {
         this.description = description;
     }
 
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", carNumber=" + carNumber +
+                ", mileage=" + mileage +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
 

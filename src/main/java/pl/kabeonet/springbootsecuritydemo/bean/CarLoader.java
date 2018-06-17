@@ -34,7 +34,7 @@ public class CarLoader implements ApplicationListener<ContextRefreshedEvent> {
         LOGGER.info("Saved audi - id: " + audi.getId());
 
         Car peugeot = new Car();
-        peugeot.setCarNumber(1);
+        peugeot.setCarNumber(2);
         peugeot.setModel("Peugeot 800");
         peugeot.setMileage(13000);
         peugeot.setDescription("Samochód nowy");

@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head lang="en">
 
-    <title>Spring Boot Security Demo Project</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring Framework Guru</title>
 
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen"/>
-
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
 
 <div class="container">
-    <div class="jumbotron">
-        <img src="../static/images/java-logo.png" width="300" th:src="@{images/java-logo.png}"/>
-        <h1>First page</h1>
-    </div>
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 </div>
-
 </body>
 </html>

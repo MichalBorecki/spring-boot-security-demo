@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.kabeonet.springbootsecuritydemo.entity.Car;
 import pl.kabeonet.springbootsecuritydemo.repository.CarRepository;
 
-import java.util.Optional;
-
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -30,8 +28,8 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Optional<Car> getCarById(Long id) {
-        return carRepository.findById(id);
+    public Car getCarById(Long id) {
+        return carRepository.findById(id).get();
     }
 
     @Override
