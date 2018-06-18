@@ -45,7 +45,7 @@ public class CarController {
     /*
     Read car by id
      */
-    @RequestMapping("/{id}")
+    @RequestMapping("/show/{id}")
     public String showCar(@PathVariable long id, Model model){
         model.addAttribute("car", carService.getCarById(id));
         return "car/carShow";

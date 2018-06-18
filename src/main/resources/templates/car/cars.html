@@ -27,7 +27,7 @@
                 <td th:text="${car.model}">model</td>
                 <td th:text="${car.description}">descirption</td>
                 <td th:text="${car.mileage}">mileage</td>
-                <td><a th:href="${ '/car/' + car.id}">View</a></td>
+                <td><a th:href="${ '/car/show/' + car.id}">View</a></td>
                 <td><a th:href="${'/car/edit/' + car.id}">Edit</a></td>
             </tr>
         </table>
