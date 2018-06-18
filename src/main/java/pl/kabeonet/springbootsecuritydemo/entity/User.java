@@ -1,12 +1,11 @@
 package pl.kabeonet.springbootsecuritydemo.entity;
 
-import sun.swing.BakedArrayList;
-
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User {
+public class User extends AbstractDomainClass {
     private String userName;
 
     @Transient
@@ -17,7 +16,7 @@ public class User {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable
-    private List<Role> roles = new BakedArrayList<>();
+    private List<Role> roles = new ArrayList<>();
     private Integer failedLoginAttemps = 0;
 
     public String getUserName() {
