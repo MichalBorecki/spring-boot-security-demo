@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head lang="en">
 
     <title>Cars</title>
@@ -18,8 +18,9 @@
                 <th>Model</th>
                 <th>Description</th>
                 <th>Mileage</th>
-                <th>View</th>
-                <th>Edit</th>
+                <th sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')">View</th>
+                <th sec:authorize="hasRole('ROLE_ADMIN')">Edit</th>
+                <th sec:authorize="hasRole('ROLE_ADMIN')">Delete</th>
             </tr>
             <tr th:each="car : ${cars}">
                 <td th:text="${car.id}"><a href="/car/${car.id}">Id</a></td>
@@ -27,8 +28,9 @@
                 <td th:text="${car.model}">model</td>
                 <td th:text="${car.description}">descirption</td>
                 <td th:text="${car.mileage}">mileage</td>
-                <td><a th:href="${ '/car/show/' + car.id}">View</a></td>
-                <td><a th:href="${'/car/edit/' + car.id}">Edit</a></td>
+                <td sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')"><a th:href="${ '/car/show/' + car.id}">View</a></td>
+                <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="${'/car/edit/' + car.id}">Edit</a></td>
+                <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="${'/car/delete/' + car.id}">Delete</a></td>
             </tr>
         </table>
 
