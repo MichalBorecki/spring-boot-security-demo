@@ -4,37 +4,39 @@
 
 </head>
 <body>
+<div th:fragment="header">
 
-<div class="container">
-    <div th:fragment="header">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/car/cars}">Cars</a></li>
-                        <li><a href="#" th:href="@{/car/new}" sec:authorize="hasRole('ROLE_ADMIN')">Add new Car</a></li>
-                        <li><a href="#" th:href="@{/login}">Sign In</a></li>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-        <div class="welcome">
-            <span sec:authorize="isAuthenticated()">Welcome <span sec:authentication="userName"></span></span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" th:href="@{/}"><img src="../../static/images/java-logo.png" width="50"
+                                                             th:src="@{/images/java-logo.png}"/></a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#" th:href="@{/car/cars}">Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" th:href="@{/car/new}"
+                                        sec:authorize="hasRole('ROLE_ADMIN')">Add new Car</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#" th:href="@{/login}">Sign In</a></li>
         </div>
-        <div class="jumbotron">
-            <div class="row text-center">
-                <div class="">
-                    <h3>Spring Boot and Spring Security Demo</h3>
-                </div>
+
+    </nav>
+    <div class="welcome">
+        <span sec:authorize="isAuthenticated()">Welcome <span sec:authentication="userName"></span></span>
+    </div>
+    <div class="jumbotron">
+        <div class="row text-center">
+            <div class="">
+                <h4>Spring Boot and Spring Security Demo</h4>
             </div>
-            <div class="row text-center">
-                <img src="../../static/images/java-logo.png" width="400"
-                     th:src="@{/images/java-logo.png}"/>
-            </div>
+        </div>
+        <div class="row text-center">
+
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>
