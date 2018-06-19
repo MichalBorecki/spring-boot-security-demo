@@ -81,4 +81,8 @@ public class User extends AbstractDomainClass {
     public void setFailedLoginAttemps(Integer failedLoginAttemps) {
         this.failedLoginAttemps = failedLoginAttemps;
     }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
 }
