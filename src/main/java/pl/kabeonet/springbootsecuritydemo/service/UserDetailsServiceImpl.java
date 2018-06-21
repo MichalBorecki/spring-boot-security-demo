@@ -13,12 +13,13 @@ import pl.kabeonet.springbootsecuritydemo.entity.User;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private UserService userService;
-    private Converter<User, UserDetails> userUserDetailsConverter;
 
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
+
+    private Converter<User, UserDetails> userUserDetailsConverter;
 
     @Autowired
     @Qualifier(value = "userToUserDetails")
@@ -30,4 +31,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userUserDetailsConverter.convert(userService.findByUsername(username));
     }
+
 }
