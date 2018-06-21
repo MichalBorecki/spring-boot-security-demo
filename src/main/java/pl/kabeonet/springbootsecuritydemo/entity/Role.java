@@ -11,7 +11,7 @@ public class Role extends AbstractDomainClass {
 
     private String role;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
     private List<User> users = new ArrayList<>();
 
     public String getRole() {
