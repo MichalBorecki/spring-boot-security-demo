@@ -1,14 +1,13 @@
 package pl.kabeonet.springbootsecuritydemo.bean;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import pl.kabeonet.springbootsecuritydemo.entity.Car;
 import pl.kabeonet.springbootsecuritydemo.repository.CarRepository;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Component
 public class CarLoader implements ApplicationListener<ContextRefreshedEvent> {
