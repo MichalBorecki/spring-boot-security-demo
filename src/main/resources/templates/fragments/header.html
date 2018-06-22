@@ -19,8 +19,11 @@
                 <li class="nav-item"><a class="nav-link" href="#" th:href="@{/car/new}"
                                         sec:authorize="hasRole('ROLE_ADMIN')">Add new Car</a>
                 </li>
-                <li class="nav-item" sec:authorize="isAnonymous()"><a class="nav-link" href="#" th:href="@{/login}">Sign In</a></li>
-                <li class="nav-item" sec:authorize="isAuthenticated()"><a class="nav-link" href="#" th:href="@{/logout}">Sign Out</a></li>
+                <li class="nav-item" sec:authorize="isAnonymous()"><a class="nav-link" href="#" th:href="@{/login}">Sign
+                    In</a></li>
+                <li class="nav-item" sec:authorize="isAuthenticated()"><a class="nav-link" href="#"
+                                                                          th:href="@{/logout}">Sign Out</a></li>
+            </ul>
         </div>
 
     </nav>
@@ -37,7 +40,6 @@
 
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>
