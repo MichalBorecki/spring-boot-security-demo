@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 public class User extends AbstractDomainClass {
-    private String userName;
+    private String username;
 
     @Transient
     private String password;
@@ -19,12 +19,12 @@ public class User extends AbstractDomainClass {
     private List<Role> roles = new ArrayList<>();
     private Integer failedLoginAttemps = 0;
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

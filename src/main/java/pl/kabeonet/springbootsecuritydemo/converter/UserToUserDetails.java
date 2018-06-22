@@ -10,6 +10,7 @@ import pl.kabeonet.springbootsecuritydemo.service.UserDetailsImpl;
 import java.util.ArrayList;
 import java.util.Collection;
 
+
 @Component
 public class UserToUserDetails implements Converter<User, UserDetails> {
     @Override
@@ -17,7 +18,7 @@ public class UserToUserDetails implements Converter<User, UserDetails> {
         UserDetailsImpl userDetails = new UserDetailsImpl();
 
         if (user != null) {
-            userDetails.setUsername(user.getUserName());
+            userDetails.setUsername(user.getUsername());
             userDetails.setPassword(user.getEncryptedPassword());
             userDetails.setEnabled(user.getEnabled());
             Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();

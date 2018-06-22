@@ -5,5 +5,5 @@ import pl.kabeonet.springbootsecuritydemo.entity.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
-    User findByUserName(String userName);
+    User findByUsername(String username);
 }
